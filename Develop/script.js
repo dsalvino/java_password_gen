@@ -6,7 +6,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // Write password to the #password input
-function writePassword() {
+function startPassword() {
   var userInputWant = [];
   var collectedCharacters = [];
 
@@ -17,7 +17,7 @@ function writePassword() {
 
   var fancyCharacters = "\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~".split();
 
-  var lengthMessage = "Enter desired length of password (between 8 - 128 characters): ";
+  var lengthMessage = prompt("Enter desired length of password (between 8 - 128 characters): ");
   if (lengthMessage < 8) {
     alert("Must be more than 8 characters!");
     return;
@@ -51,9 +51,9 @@ function writePassword() {
   return userInputWant.join("");
 }
 
-function showPassword() {
-  var password = writePassword();
-  var endPassword = document.querySelector("#password");
+function writePassword() {
+  var endPassword = startPassword();
+  var passwordText = document.querySelector("#password");
 
-  endPassword.value = password;
+  passwordText.value = endPassword;
 }
