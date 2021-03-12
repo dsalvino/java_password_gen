@@ -19,11 +19,11 @@ function startPassword() {
   var lengthMessage = prompt("Enter desired length of password (between 8 - 128 characters): ");
   if (lengthMessage < 8) {
     alert("Must be more than 8 characters!");
-    return;
+    return(startPassword());
   }
   if (lengthMessage > 128) {
     alert("Must be less than 128 characters!");
-    return;
+    return(startPassword());
   }
   
   var confirmNumbers = confirm("Would you like to include Numbers in your password?");
